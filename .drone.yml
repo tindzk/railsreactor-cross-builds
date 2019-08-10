@@ -1,0 +1,11 @@
+kind: pipeline
+name: default
+steps:
+  - name: build
+    image: tindzk/seed:0.1.5
+    commands:
+      - blp-server &
+      - seed bloop
+      - bloop run demo-js
+      - bloop run demo-jvm
+      - bloop run demo-native
